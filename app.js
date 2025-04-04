@@ -74,20 +74,6 @@ app.delete("/listings/:id", async (req, res) => {
     res.redirect("/listings");
 });
 
-// app.get("/testListing", async (req, res) => {
-//     let sampleListing = new Listing({
-//         title: "My new Villa",
-//         description: "Sea facing villa by the beach",
-//         price: 50000,
-//         location: "Andaman Island",
-//         country: "India",
-//     });
-
-//     await sampleListing.save();
-//     console.log("sample was saved");
-//     res.send("Testing Successful");
-// });
-
 app.listen(3000, () => {
-    console.log("Server is listening on port 3000. Welcome Shobhit:)");
+    console.log("Server is listening on port 3000. Visit http://localhost:3000/listings");
 });
