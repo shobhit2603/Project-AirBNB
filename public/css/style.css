@@ -12,7 +12,7 @@ body {
 /* Navbar */
 .navbar {
     height: 5rem;
-    background-color: white;
+    background-color: rgb(19, 19, 19);
 }
 
 .fa-map {
@@ -21,14 +21,18 @@ body {
 }
 
 .nav-link {
-    color: #222222 !important;
+    color: #e7e7e7 !important;
+}
+
+.nav-link:hover {
+    color: #ff606b !important;
 }
 
 /* Footer */
 .f-info {
     text-align: center;
     height: 8rem;
-    background-color: #f1f1f1;
+    background-color: #020202;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,7 +41,7 @@ body {
 
 .f-info-links a {
     text-decoration: none;
-    color: #222222;
+    color: #b5b5b5;
 }
 
 .f-info-links a:hover {
@@ -63,6 +67,7 @@ body {
 .card {
     border: none !important;
     margin-bottom: 2rem;
+    border-radius: 1rem !important;
 }
 
 .card-img-top {
@@ -78,7 +83,7 @@ body {
 }
 
 .card-text {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .listing-link {
@@ -87,7 +92,11 @@ body {
 
 /* Card Effects */
 .card-img-top:hover {
-    opacity: 0.7;
+    opacity: 0.4;
+}
+
+.card-text:hover {
+    color: rgb(255, 255, 255);
 }
 
 /* New Page */
@@ -96,10 +105,20 @@ body {
     border: none !important;
 }
 
+.add-btn:hover {
+    background-color: #e7e7e7 !important;
+    color: #ff313f !important;
+}
+
 /* Edit Page */
 .edit-btn {
     background-color: #fe424d !important;
     border: none !important;
+}
+
+.edit-btn:hover {
+    background-color: #e7e7e7 !important;
+    color: #ff313f !important;
 }
 
 /* Show Page */
@@ -114,4 +133,14 @@ body {
 .show-card {
     padding-left: 0;
     padding-right: 0;
+}
+
+.delete-btn {
+    border: none !important;
+    background-color: #0c0c0c !important;
+}
+
+.delete-btn:hover {
+    background-color: #000000 !important;
+    color: #ff6666 !important;
 }
