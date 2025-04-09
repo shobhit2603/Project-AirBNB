@@ -79,9 +79,9 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
 }));
 
 //404 Error Handler
-// app.all("*", (req, res, next) => {
-//     next(new ExpressError(404, "Page Not Found"));
-// });
+app.use((req, res, next) => {
+    next(new ExpressError(404, "Page Not Found"));
+});
 
 //Error Handler Middleware
 app.use((err, req, res, next) => {
