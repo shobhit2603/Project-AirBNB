@@ -5,6 +5,7 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const port = 3000;
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -21,7 +22,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "/public"))); 
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
     res.send("Hello this is Port 3000");
@@ -48,7 +49,13 @@ app.get("/listings/:id", async (req, res) => {
 //Create Route
 app.post("/listings", async (req, res) => {
     const newListing = new Listing(req.body.listing);
-    await newListing.save();
+    try {
+        await newListing.save();
+        res.redirect("/listings");
+    } catch (err) {
+        console.error(err);
+        res.status(400).render("listings/new", { error: err.message });
+    }
     res.redirect("listings");
 });
 
@@ -74,6 +81,6 @@ app.delete("/listings/:id", async (req, res) => {
     res.redirect("/listings");
 });
 
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000. Visit http://localhost:3000/listings");
+app.listen(port, () => {
+    console.log(`Server is Started.\nVisit http://localhost:${port}/listings`);
 });
