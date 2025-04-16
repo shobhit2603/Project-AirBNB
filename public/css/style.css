@@ -12,7 +12,7 @@ body {
 /* Navbar */
 .navbar {
     height: 5rem;
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(250, 250, 250);
 }
 
 .fa-map {
@@ -21,7 +21,7 @@ body {
 }
 
 .nav-link {
-    color: #e7e7e7 !important;
+    color: #202020 !important;
 }
 
 .nav-link:hover {
@@ -32,7 +32,7 @@ body {
 .f-info {
     text-align: center;
     height: 8rem;
-    background-color: #020202;
+    background-color: #f1f1f1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,7 +41,7 @@ body {
 
 .f-info-links a {
     text-decoration: none;
-    color: #b5b5b5;
+    color: #909090;
 }
 
 .f-info-links a:hover {
@@ -61,10 +61,11 @@ body {
     font-size: 1.3rem;
     margin-right: 1rem;
     margin-top: 0.5rem;
+    cursor: pointer;
 }
 
 /* Cards */
-.card {
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
     border-radius: 1rem !important;
@@ -83,7 +84,7 @@ body {
 }
 
 .card-text {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .listing-link {
@@ -92,11 +93,11 @@ body {
 
 /* Card Effects */
 .card-img-top:hover {
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
-.card-text:hover {
-    color: rgb(255, 255, 255);
+.listing-card-text:hover {
+    font-weight: 600;
 }
 
 /* New Page */
@@ -136,8 +137,7 @@ body {
 }
 
 .delete-btn {
-    border: none !important;
-    background-color: #0c0c0c !important;
+    color: #ff6666 !important;
 }
 
 .delete-btn:hover {
