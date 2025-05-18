@@ -11,6 +11,10 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
+const listingRouter = require("./routes/listing.js");
+const reviewRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
+
 const sessionOptions = {
     secret: "mysupersecretcode",
     resave: false,
@@ -38,9 +42,6 @@ app.use((req, res, next) => {
     next();
 });
 
-const listings = require("./routes/listing.js");
-const reviews = require("./routes/review.js");
-
 const exp = require("constants");
 
 const port = 3000;
@@ -66,8 +67,9 @@ app.get("/", (req, res) => {
     res.send("Hello this is Port 3000");
 });
 
-app.use("/listings", listings);
-app.use("/listings/:id/reviews", reviews);
+app.use("/listings", listingRouter);
+app.use("/listings/:id/reviews", reviewRouter);
+app.use("/", userRouter);
 
 //404 Error Handler
 app.use((req, res, next) => {
