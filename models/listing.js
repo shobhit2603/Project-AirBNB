@@ -12,14 +12,13 @@ const listingSchema = new Schema({
         required: true,
     },
     image: {
-        filename: String,
         url: {
             type: String,
-            default: "https://4kwallpapers.com/images/walls/thumbs_3t/14811.jpg",
-            set: (v) =>
-                v === ""
-                    ? "https://4kwallpapers.com/images/walls/thumbs_3t/14811.jpg"
-                    : v,
+            required: true,
+        },
+        filename: {
+            type: String,
+            required: true,
         },
     },
     price: {
