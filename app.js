@@ -68,9 +68,9 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.get("/", (req, res) => {
-    res.send("Hello this is Port 3000");
-});
+// app.get("/", (req, res) => {
+//     res.send("Hello this is Port 3000");
+// });
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
