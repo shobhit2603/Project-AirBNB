@@ -1,34 +1,60 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/listings"><img src="/favicon.png" alt="Airbnb Logo" class="logo" />
-            <h3>airbnb</h3>
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="/listings">
+            <img src="/favicon.png" alt="Airbnb Logo" class="logo" />
+            <h4 class="mb-0 ms-2">AirBNB</h4>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-            <span class="navbar-toggler-icon"></span>
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <!-- <div class="navbar-nav">
-                <a class="nav-link" href="/listings">Explore</a>
-            </div> -->
 
-            <div class="navbar-nav ms-auto search">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 search-input" type="search" placeholder="Search destinations" />
-                    <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- Collapsible Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Search Bar (Mobile Only) -->
+            <div class="d-md-none mb-3">
+                <form class="d-flex search" role="search" action="/listings" method="GET">
+                    <input class="form-control search-input" type="search" name="q" placeholder="Search destinations"
+                        value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" />
+                    <button class="btn search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </form>
             </div>
 
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/listings/new">Airbnb your home</a>
-                <% if(!currentUser) { %>
-                    <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-                    <a class="nav-link" href="/login"><b>Login</b></a>
-                    <% } %>
-                        <% if(currentUser) { %>
-                            <a class="nav-link" href="/logout"><b>logout</b></a>
-                            <% } %>
+            <!-- Centered Search Bar -->
+            <div class="search-container d-none d-md-flex">
+                <form class="d-flex search" role="search" action="/listings" method="GET">
+                    <input class="form-control me-2 search-input" type="search" name="q"
+                        placeholder="Search destinations"
+                        value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" />
+                    <button class="btn search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
             </div>
+
+            <!-- Right-aligned Links -->
+            <ul class="navbar-nav ms-md-auto mt-2 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/listings/new">Airbnb your home</a>
+                </li>
+
+                <% if (!currentUser) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login"><b>Login</b></a>
+                    </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout"><b>Logout</b></a>
+                        </li>
+                        <% } %>
+            </ul>
         </div>
     </div>
 </nav>

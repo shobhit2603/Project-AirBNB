@@ -1,63 +1,73 @@
 <% layout("layouts/boilerplate") %>
 
-    <div class="row mt-3">
-        <div class="col-8 offset-2">
-            <h2>Create a New Listing</h2>
-            <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
-                <div class="row">
-                    <div class="mb-3 col-md-8">
-                        <label for="title" class="form-label">Title</label>
-                        <input name="listing[title]" placeholder="Title of your Listing" type="text"
-                            class="form-control" required />
-                        <div class="valid-feedback">Title Looks Good!</div>
-                        <div class="invalid-feedback">Enter a valid Title!</div>
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="category" class="form-label">Category</label>
-                        <select name="listing[category]" id="category" class="form-select" required>
-                            <option value="" disabled selected>Select a category</option>
-                            <% categories.forEach(category=> { %>
-                                <option value="<%= category %>">
-                                    <%= category %>
-                                </option>
-                                <% }) %>
-                        </select>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="p-4 border rounded shadow-sm bg-light">
+                    <h3 class="mb-4 text-center">Create a New Listing</h3>
+                    <form method="POST" action="/listings" class="needs-validation" novalidate
+                        enctype="multipart/form-data">
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label for="title" class="form-label">Title</label>
+                                <input name="listing[title]" placeholder="Title of your Listing" type="text"
+                                    class="form-control" required />
+                                <div class="valid-feedback">Title Looks Good!</div>
+                                <div class="invalid-feedback">Enter a valid Title!</div>
+                            </div>
 
-                        <div class="invalid-feedback">Please select a category!</div>
-                    </div>
+                            <div class="col-md-4">
+                                <label for="category" class="form-label">Category</label>
+                                <select name="listing[category]" id="category" class="form-select" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <% categories.forEach(category=> { %>
+                                        <option value="<%= category %>">
+                                            <%= category %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <div class="invalid-feedback">Please select a category!</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea name="listing[description]" class="form-control" rows="5"
+                                    placeholder="Write something about your place..." required></textarea>
+                                <div class="valid-feedback">Description Looks Good!</div>
+                                <div class="invalid-feedback">Please Enter a short Description!</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="image" class="form-label">Upload Listing Image</label>
+                                <input name="listing[image]" type="file" class="form-control" required />
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="price" class="form-label">Price</label>
+                                <input name="listing[price]" placeholder="Enter Amount" class="form-control" required />
+                                <div class="invalid-feedback">Enter a valid Price!</div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label for="country" class="form-label">Country</label>
+                                <input name="listing[country]" placeholder="India, Australia, UAE..." type="text"
+                                    class="form-control" required />
+                                <div class="invalid-feedback">Enter a valid Country Name!</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="location" class="form-label">Location</label>
+                                <input name="listing[location]" placeholder="Mumbai, Maharashtra" type="text"
+                                    class="form-control" required />
+                                <div class="invalid-feedback">Enter a valid Location!</div>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <button class="btn add-btn w-100 py-2" type="submit">Add Listing</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea name="listing[description]" class="form-control" rows="5"
-                        placeholder="Write somthing about your place..." required></textarea>
-                    <div class="valid-feedback">Description Looks Good!</div>
-                    <div class="invalid-feedback">Please Enter a short Description!</div>
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Upload Listing Image</label>
-                    <input name="listing[image]" type="file" class="form-control" required />
-                </div>
-                <div class="row">
-                    <div class="mb-3 col-md-4">
-                        <label for="price" class="form-label">Price</label>
-                        <input name="listing[price]" placeholder="Enter Amount" class="form-control" required />
-                        <div class="invalid-feedback">Enter a valid Price!</div>
-                    </div>
-                    <div class="mb-3 col-md-8">
-                        <label for="country" class="form-label">Country</label>
-                        <input name="listing[country]" placeholder="India, Australia, UAE..." type="text"
-                            class="form-control" required />
-                        <div class="invalid-feedback">Enter a valid Country Name!</div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="location" class="form-label">Location</label>
-                    <input name="listing[location]" placeholder="Mumbai, Maharashtra" type="text" class="form-control"
-                        required />
-                    <div class="invalid-feedback">Enter a valid Location!</div>
-                </div>
-                <button class="btn btn-dark add-btn mt-3">Add Listing</button>
-                <br><br>
-            </form>
+            </div>
         </div>
     </div>

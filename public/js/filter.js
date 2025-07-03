@@ -31,3 +31,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.querySelector('.filter[data-category="All"]')?.click();
+
+const filters = document.getElementById('filters');
+const scrollHint = document.querySelector('.scroll-hint');
+
+if (filters && scrollHint) {
+    const hideScrollHint = () => {
+        scrollHint.style.display = 'none';
+        filters.removeEventListener('scroll', hideScrollHint);
+    };
+
+    filters.addEventListener('scroll', () => {
+        if (filters.scrollLeft > 10) {
+            hideScrollHint();
+        } else {
+            scrollHint.style.display = 'block';
+        }
+    });
+}
