@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-map"></i>
+        <a class="navbar-brand" href="/listings"><img src="/favicon.png" alt="Airbnb Logo" class="logo" />
             <h3>airbnb</h3>
         </a>
 
@@ -11,16 +11,15 @@
             <!-- <div class="navbar-nav">
                 <a class="nav-link" href="/listings">Explore</a>
             </div> -->
-            
+
             <div class="navbar-nav ms-auto search">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search destinations" />
-                    <button class="btn search-btn" type="submit"><i
-                        class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>
-                
-                <div class="navbar-nav ms-auto">
+                    <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+            <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="/listings/new">Airbnb your home</a>
                 <% if(!currentUser) { %>
                     <a class="nav-link" href="/signup"><b>Sign Up</b></a>

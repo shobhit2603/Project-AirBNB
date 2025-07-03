@@ -9,6 +9,9 @@
             <h3>
                 <%= listing.title %>
             </h3>
+            <span class="badge bg-dark mb-2">
+                <%= listing.category.charAt(0).toUpperCase() + listing.category.slice(1) %>
+            </span>
             <p class="card-text">
                 <%= listing.location %>, <%= listing.country %>
             </p>

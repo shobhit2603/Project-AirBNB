@@ -17,3 +17,16 @@
         }, false)
     })
 })()
+
+// Toggle taxSwitch
+const taxSwitch = document.getElementById('switchCheckDefault');
+taxSwitch.addEventListener('click', () => {
+    const taxInfo = document.querySelectorAll('.tax-info');
+    for (info of taxInfo) {
+        if (info.style.display != "inline") {
+            info.style.display = "inline";
+        } else {
+            info.style.display = "none";
+        }
+    }
+});

@@ -20,6 +20,9 @@ router.route("/")
 //New Route - GET
 router.get("/new", isLoggedIn, listingsController.renderNewForm);
 
+// Category Filter Route - must be above "/:id"
+router.get("/category/:categoryName", wrapAsync(listingsController.showListingsByCategory));
+
 //Show, Update, and Delete Route - GET, PUT & DELETE
 router.route("/:id")
     .get(wrapAsync(listingsController.showListing))

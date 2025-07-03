@@ -55,6 +55,11 @@ const listingSchema = new Schema({
             required: true,
         },
     },
+    category: {
+        type: String,
+        enum: ["Trending", "Rooms", "Iconic Cities", "Mountains", "Forests", "Beach", "Camping", "Castle", "Pool", "Boats"],
+        default: "Other",
+    }
 });
 
 //Review Deletion Middleware

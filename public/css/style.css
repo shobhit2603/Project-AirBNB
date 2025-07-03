@@ -23,16 +23,25 @@ body {
 
 .nav-link {
     color: #202020 !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
 }
 
 .nav-link:hover {
     color: #fe424d !important;
+    border-bottom: 2px solid #000000 !important;
 }
 
 .navbar-brand {
     color: #000000 !important;
     display: flex;
     align-items: center;
+}
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
 }
 
 /* Navbar Search */
@@ -44,7 +53,7 @@ body {
     border-radius: 5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.099);
     padding: 0.5rem;
-}   
+}
 
 .search-btn {
     background-color: #fe4264 !important;
@@ -142,7 +151,7 @@ body {
 /* New Page */
 .add-btn {
     background-color: #fe424d !important;
-    border: none !important;
+    border: 1px solid #000000 !important;
 }
 
 .add-btn:hover {
@@ -153,7 +162,7 @@ body {
 /* Edit Page */
 .edit-btn {
     background-color: #fe424d !important;
-    border: none !important;
+    border: 1px solid #000000 !important;
 }
 
 .edit-btn:hover {
@@ -182,11 +191,94 @@ body {
 .delete-btn:hover {
     background-color: #000000 !important;
     color: #ff6666 !important;
+    border: 1px solid #ff6666 !important;
 }
 
 /* Map */
 #map {
     height: 50vh;
-    width: 90vh;
+    width: 70vh;
     border-radius: 1rem !important;
+}
+
+/* Filters */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5rem;
+    margin: 1rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+}
+
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    color: #6c757d;
+}
+
+.filter:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.filter.active {
+    border-bottom: 3px solid #fe424d;
+    font-weight: bold;
+    color: black;
+}
+
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.tax-toggle {
+    margin: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 12rem !important;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    .filter p {
+        font-size: 0.75rem;
+    }
+
+    #filters {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .tax-toggle {
+        margin: 0.5rem auto;
+    }
+
+    #category-heading {
+        font-size: 1.25rem;
+        text-align: center;
+    }
 }

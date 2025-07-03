@@ -4,24 +4,38 @@
         <div class="col-8 offset-2">
             <h2>Create a New Listing</h2>
             <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input name="listing[title]" placeholder="Title of your Listing" type="text" class="form-control"
-                        required />
-                    <div class="valid-feedback">Title Looks Good!</div>
-                    <div class="invalid-feedback">Enter a valid Title!</div>
+                <div class="row">
+                    <div class="mb-3 col-md-8">
+                        <label for="title" class="form-label">Title</label>
+                        <input name="listing[title]" placeholder="Title of your Listing" type="text"
+                            class="form-control" required />
+                        <div class="valid-feedback">Title Looks Good!</div>
+                        <div class="invalid-feedback">Enter a valid Title!</div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="category" class="form-label">Category</label>
+                        <select name="listing[category]" id="category" class="form-select" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <% categories.forEach(category=> { %>
+                                <option value="<%= category %>">
+                                    <%= category %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                        <div class="invalid-feedback">Please select a category!</div>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="listing[description]" class="form-control"
+                    <textarea name="listing[description]" class="form-control" rows="5"
                         placeholder="Write somthing about your place..." required></textarea>
                     <div class="valid-feedback">Description Looks Good!</div>
                     <div class="invalid-feedback">Please Enter a short Description!</div>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Upload Listing Image</label>
-                    <input name="listing[image]" type="file"
-                        class="form-control" required />
+                    <input name="listing[image]" type="file" class="form-control" required />
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
