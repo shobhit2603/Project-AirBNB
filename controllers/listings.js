@@ -66,7 +66,7 @@ module.exports.createListing = async (req, res, next) => {
     newListing.geometry = response.body.features[0].geometry;
 
     await newListing.save();
-    req.flash("success", "Successfully created a new listing!");
+    req.flash("success", "Added a new listing!");
     res.redirect("/listings");
 };
 
@@ -93,7 +93,7 @@ module.exports.updateListing = async (req, res, next) => {
         await listing.save();
     }
 
-    req.flash("success", "Successfully updated the listing!");
+    req.flash("success", "Listing Updated!");
     res.redirect(`/listings/${id}`);
 };
 
@@ -101,6 +101,6 @@ module.exports.deleteListing = async (req, res, next) => {
     let { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
     console.log(deletedListing);
-    req.flash("success", "Successfully deleted the listing!");
+    req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
 };

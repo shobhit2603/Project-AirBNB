@@ -142,6 +142,10 @@ body {
     border: none !important;
     margin-bottom: 2rem;
     border-radius: 1rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    background-color: #ffffff !important;
+    padding: 1rem !important;
 }
 
 .card-img-top {
@@ -166,12 +170,9 @@ body {
 }
 
 /* Card Effects */
-.card-img-top:hover {
-    opacity: 0.8;
-}
-
-.listing-card-text:hover {
-    font-weight: 600;
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* New Page */
@@ -221,13 +222,6 @@ body {
     color: #ffffff !important;
 }
 
-/* Map */
-/* #map {
-    height: 50vh;
-    width: 70vh;
-    border-radius: 1rem !important;
-} */
-
 /* Filters */
 .filters-wrapper {
     position: relative;
@@ -249,8 +243,8 @@ body {
     margin: 1rem auto;
     padding: 0.5rem 5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem; 
-    padding-left: 6rem;  
+    border-radius: 1rem;
+    padding-left: 6rem;
 }
 
 #filters::-webkit-scrollbar {
@@ -280,27 +274,6 @@ body {
     color: black;
 }
 
-.scroll-hint {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(to left, white 40%, transparent);
-    padding-left: 1rem;
-    pointer-events: none;
-    display: none;
-    /* Show only on small screens */
-}
-
-.scroll-hint i {
-    color: #fe424d;
-    background-color: #ffffff;
-    border-radius: 50%;
-    padding: 0.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.2rem;
-}
-
 .filter p {
     font-size: 0.8rem;
 }
@@ -316,10 +289,15 @@ body {
     bottom: 2rem;
     right: 1rem;
     background: white;
+    color: #222;
     padding: 0.75rem 1.25rem;
     border-radius: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.164);
     z-index: 999;
+    transition: all 0.3s ease;
+}
+.tax-toggle-floating:hover {
+    box-shadow: 0 0 15px rgba(255, 21, 21, 0.455);
 }
 
 /* Responsive Design */
@@ -398,7 +376,7 @@ body {
 .show-img {
     max-height: 500px;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 2rem;
 }
 
 #map {
