@@ -44,7 +44,7 @@
                         <div class="d-flex gap-3 mt-3">
                             <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark px-4 edit-btn">Edit</a>
                             <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
-                                <button class="btn btn-outline-dark">Delete</button>
+                                <button class="btn btn-outline-dark delete-btn">Delete</button>
                             </form>
                         </div>
                         <% } %>
@@ -79,7 +79,7 @@
                         </fieldset>
                         <label class="form-label">Comment</label>
                         <textarea name="review[comment]" class="form-control mb-3" rows="4" required></textarea>
-                        <button class="btn btn-outline-dark">Submit</button>
+                        <button class="btn btn-outline-dark delete-btn">Submit</button>
                     </form>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                                                 <form
                                                     action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
                                                     method="POST">
-                                                    <button class="btn btn-sm btn-outline-dark">Delete</button>
+                                                    <button class="btn btn-sm btn-outline-dark delete-btn">Delete</button>
                                                 </form>
                                                 <% } %>
                                         </div>
