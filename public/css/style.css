@@ -38,6 +38,10 @@ body {
     align-items: center;
 }
 
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
 .navbar-brand h4 {
     font-weight: 600;
     font-size: 1.25rem;
@@ -46,7 +50,6 @@ body {
 .logo {
     width: 2rem;
     height: 2rem;
-    margin-right: 0.5rem;
 }
 
 /* Custom Hamburger Icon */
@@ -233,10 +236,6 @@ body {
 }
 
 /* Show Page */
-.show-img {
-    height: 50vh;
-}
-
 .btns {
     display: flex;
 }
@@ -270,6 +269,21 @@ body {
         0 15px 0 -4px #39a2db,
         0 16px 10px -3px #39a2db;
 }
+
+.listing-detail-card {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.review-card {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.owner-heading {
+    color: #212529;
+}
+
 
 /* Filters */
 .filters-wrapper {
