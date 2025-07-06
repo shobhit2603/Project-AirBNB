@@ -51,23 +51,23 @@ A fully functional, responsive Airbnb-style web application built using **Node.j
 ## 📁 Project Structure
 
 PROJECT-AIRBNB/
-├── controllers/ # Route controllers
-├── init/ # Initialization scripts
-├── models/ # Mongoose schemas/models
-├── public/ # Static assets (CSS, JS, Images)
-├── routes/ # Express routes
-├── utils/ # Helper functions
-├── views/ # EJS view templates
-│ ├── includes/ # Partials like navbar, footer
-│ ├── layouts/ # Main layout.ejs file
-│ ├── listings/ # Listings views
-│ └── users/ # Authentication views
-├── .env # Environment variables
-├── app.js # Main application entry
-├── cloudConfig.js # Cloudinary config
-├── middleware.js # Custom middleware
-├── package.json # NPM dependencies
-└── README.md # You're here!
+├── controllers/
+├── init/ 
+├── models/ 
+├── public/ 
+├── routes/ 
+├── utils/ 
+├── views/ 
+│ ├── includes/ 
+│ ├── layouts/ 
+│ ├── listings/ 
+│ └── users/ 
+├── .env 
+├── app.js 
+├── cloudConfig.js 
+├── middleware.js 
+├── package.json 
+└── README.md 
 
 ---
 
