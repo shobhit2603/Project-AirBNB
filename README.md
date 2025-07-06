@@ -50,24 +50,8 @@ A fully functional, responsive Airbnb-style web application built using **Node.j
 
 ## 📁 Project Structure
 
-PROJECT-AIRBNB/
-├── controllers/
-├── init/ 
-├── models/ 
-├── public/ 
-├── routes/ 
-├── utils/ 
-├── views/ 
-│ ├── includes/ 
-│ ├── layouts/ 
-│ ├── listings/ 
-│ └── users/ 
-├── .env 
-├── app.js 
-├── cloudConfig.js 
-├── middleware.js 
-├── package.json 
-└── README.md 
+![Screenshot 2025-07-06 165031](https://github.com/user-attachments/assets/a8c88a67-3225-4113-aefd-fa774e3edd28)
+
 
 ---
 
